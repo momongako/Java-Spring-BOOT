@@ -10,15 +10,46 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeDaoImpl implements EmployeeDao, UserDao {
+	 List<Employee> employees;
+	 
+	 public EmployeeDaoImpl() {
+	        this.employees = new ArrayList<>();
+	    }
 
-    @Override
+	@Override
     public Employee getEmployeeById(int id) {
-        return null;
+		List<Object> EmployeeById = new ArrayList<>();
+		
+		
+		 for(Employee Em : this.employees){
+
+	            if(Em.getId() == id){
+
+	            	EmployeeById.add(Em);
+	            }
+	            
+
+	            
+	        }
+		return (Employee) EmployeeById;
+        
     }
 
     @Override
     public Employee getEmployeeByName(String name) {
-        return null;
+    	 List<Object> EmpByName = new ArrayList<>();
+
+         for(Employee cadres : this.employees){
+
+             
+			if(cadres.getFullName().contains(name)){
+
+            	 EmpByName.add(cadres);
+             }
+
+             
+         }
+         return (Employee) EmpByName;
     }
 
     @Override
@@ -33,10 +64,10 @@ public class EmployeeDaoImpl implements EmployeeDao, UserDao {
 
     @Override
     public List<Employee> getAllEmployees() {
-        List<Employee> employees = new ArrayList<Employee>();
+        
         String dbUrl = "jdbc:mysql://localhost:3306/employeemanagement";
         try {
-            Connection conn = DriverManager.getConnection(dbUrl,"root","multi2022!");
+            Connection conn = DriverManager.getConnection(dbUrl,"root","gokuzz100");
             String sql = "SELECT * FROM Employee";
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();

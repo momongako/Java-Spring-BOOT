@@ -14,8 +14,13 @@ public class Main {
         for (Employee employee : employees) {
             System.out.println("Employee " + employee);
         }
-
-
+        // Sreach
+        System.out.println("-----------------------------");
+        
+        
+        System.out.println(empDao.getEmployeeById(1));
+        
+        System.out.println(empDao.getEmployeeByName("Marler").toString());
 
     }
 }
