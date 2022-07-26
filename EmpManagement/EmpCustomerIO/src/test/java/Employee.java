@@ -1,7 +1,4 @@
-package model;
-
 public class Employee {
-    public Object employees;
     private int id;
     private String fullName;
     private String email;

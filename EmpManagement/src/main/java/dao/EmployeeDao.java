@@ -12,6 +12,6 @@ public interface EmployeeDao {
     public List<Employee> getAllEmployees(); //Dùng cho TRUY VẤN (SELECT)
     public void saveEmployee(Employee emp); //Dùng cho THÊM dữ liệu (INSERT INTO)
     public void updateEmployee(Employee emp); //Dùng cho SỬA dữ liệu (UPDATE)
-    public void deleteEmployee(Employee emp); //Dùng cho XÓA dữ liệu (DELETE FROM)
+    public void deleteEmployee(int id); //Dùng cho XÓA dữ liệu (DELETE FROM)
 
 }
